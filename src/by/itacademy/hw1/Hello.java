@@ -1,4 +1,4 @@
-package by.itacademy.hw2;
+package by.itacademy.hw1;
 
 public class Hello {
    public static void main(String[] args) {
