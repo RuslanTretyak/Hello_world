@@ -21,6 +21,7 @@ public class Task1 {
         System.out.println(d);
         System.out.println(bool);
 
+
     }
 
 }
