@@ -10,7 +10,7 @@ public class Task8 {
         int n = rand.nextInt(28801);
         System.out.println("для Петрова: осталось " + n + " секунд");
         int hr = (n - (n % 3600))/3600;
-        switch ((n - (n % 3600))/3600) {
+        switch (hr) {
             case (8):
             case (7):
             case (6):
