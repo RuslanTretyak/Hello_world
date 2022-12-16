@@ -9,18 +9,17 @@ public class Task8 {
         Random rand = new Random();
         int n = rand.nextInt(28801);
         System.out.println("для Петрова: осталось " + n + " секунд");
-        int hr = (n - (n % 3600))/3600;
-        switch (hr) {
+        switch (n/3600) {
             case (8):
             case (7):
             case (6):
             case (5):
-                System.out.println("для сотрудников: осталось " + hr + " часов");
+                System.out.println("для сотрудников: осталось " + (n/3600) + " часов");
                 break;
             case (4):
             case (3):
             case (2):
-                System.out.println("для сотрудников: осталось " + hr + " часа");
+                System.out.println("для сотрудников: осталось " + (n/3600) + " часа");
                 break;
             case (1):
                 System.out.println("для сотрудников: остался 1 час");
