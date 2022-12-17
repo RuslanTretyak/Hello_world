@@ -1,9 +1,22 @@
 package by.itacademy.hw4;
 
+import java.util.Scanner;
+
 public class Task2 {
 
     public static void main(String[] args) {
-        byte a = 9/4;
-        System.out.println(a);
+
+        int sum = 0;
+        int prod = 1;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите число");
+        int a = sc.nextInt();
+
+        for(int i = a; i > 0; i /= 10) {
+           sum += i % 10;
+           prod *= (i % 10);
+        }
+        System.out.println("сумма цифр числа " + a + " равна " + sum);
+        System.out.println("произведение цифр числа " + a + " равно " + prod);
     }
 }
