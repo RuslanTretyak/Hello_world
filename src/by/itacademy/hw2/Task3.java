@@ -4,10 +4,7 @@ public class Task3 {
     public static void main(String[] args) {
 
         int sec = 100000000;
-        System.out.println(sec + " seconds");
-        System.out.println(sec / 60 + " minutes");
-        System.out.println(sec / 3600 + " hours");
-        System.out.println(sec / 86400 + " days");
-        System.out.println(sec / 604800 + " weeks");
+        System.out.println(sec/604800 + " недель, " + ((sec % 604800) / 86400) + " дней, " + ((sec % 86400) / 3600)
+                + " часов, " + ((sec % 3600) / 60) + " минут, " + (sec % 60) + " секунд");
     }
 }
