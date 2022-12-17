@@ -12,24 +12,14 @@ public class Task5 {
 
         if (sec < 0 || sec > 59) {
             System.out.println("Ошибка ввода: число должно быть от 0 до 59");
-        }
-        else {
-            if (sec > 44) {
+        } else if (sec > 44) {
                 System.out.println(sec + " секунд попадает в 4 четверть часа");
+            } else if (sec > 29) {
+                System.out.println(sec + " секунд попадает в 3 четверть часа");
+            } else if (sec > 14){
+                System.out.println(sec + " секунд попадает в 2 четверть часа");
+            } else {
+                System.out.println(sec + " секунд попадает в 1 четверть часа");
             }
-            else {
-                if (sec > 29) {
-                    System.out.println(sec + " секунд попадает в 3 четверть часа");
-                }
-                else {
-                    if (sec > 14){
-                        System.out.println(sec + " секунд попадает в 2 четверть часа");
-                    }
-                    else {
-                        System.out.println(sec + " секунд попадает в 1 четверть часа");
-                    }
-                }
-            }
-        }
     }
 }
