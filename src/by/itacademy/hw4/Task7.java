@@ -14,13 +14,18 @@ public class Task7 {
             System.out.print(" " + array[i]);
         }
         System.out.println(" }");
-        System.out.print("Новый массив: {");
         int j = 9;
-        int[] newArray = new int[10];
-        for (int i = 0; i < 10; i++) {
-            newArray[i] = array[j];
-            System.out.print(" " + newArray[i]);
+        int bufer;
+        for (int i = 0; i < j; i++) {
+
+            bufer = array[i];
+            array[i] = array[j];
+            array[j] = bufer;
             j--;
+        }
+        System.out.print("Новый массив: {");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(" " + array[i]);
         }
         System.out.println(" }");
 
