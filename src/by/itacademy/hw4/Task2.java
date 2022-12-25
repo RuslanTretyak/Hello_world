@@ -15,7 +15,7 @@ public class Task2 {
             prod = 1;
         }
 
-        for (int i = a; i > 0; i /= 10) {
+        for (int i = Math.abs(a); i > 0; i /= 10) {
             sum += i % 10;
             prod *= (i % 10);
         }

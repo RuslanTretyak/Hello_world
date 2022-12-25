@@ -4,7 +4,7 @@ public class Task6 {
 
     public static void main (String[] args) {
 
-        int[] array = new int[] {-3, 2, 5, 0, -1, -4, 3, 6};
+        int[] array = new int[] {-3, 2, -5, 0, 1, -4, -3, 6};
         int i = 0;
         int j = 0;
         for (int a : array) {
@@ -14,31 +14,31 @@ public class Task6 {
                 j++;
             }
         }
-        if (i > 0) {
-            int[] posArray = new int[i];
-            i = 0;
-            System.out.print("массив положительных чисел: {");
-            for (int a : array) {
-                if (a > 0) {
-                    posArray[i] = a;
-                    System.out.print(" " + posArray[i]);
-                    i++;
-                }
+        int[] posArray = new int[i];
+        int[] negArray = new int[j];
+        i = 0;
+        j = 0;
+        for (int a : array) {
+            if (a > 0) {
+                posArray[i] = a;
+                i++;
+            } else if (a < 0) {
+                negArray[j] = a;
+                j++;
             }
-            System.out.println(" }");
         }
-        if (j > 0) {
-            int[] negArray = new int[j];
-            j = 0;
-            System.out.print("массив отрицательных чисел: {");
-            for (int a : array) {
-                if (a < 0) {
-                    negArray[j] = a;
-                    System.out.print(" " + negArray[j]);
-                    j++;
-                }
-            }
-            System.out.println(" }");
+
+        System.out.print("массив положительных чисел: {  ");
+        printArray (posArray);
+        System.out.print("}" + "\n");
+
+        System.out.print("массив отрицательных чисел: {  ");
+        printArray (negArray);
+        System.out.print("}" + "\n");
+    }
+    private static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + "  ");
         }
     }
 }
