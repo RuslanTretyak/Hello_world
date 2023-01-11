@@ -7,8 +7,8 @@ public class Main {
         Person person1 = new Person();
         Person person2 = new Person("Руслан", 28);
 
-        person1.fullName = "Руслан";
-        person1.age = 28;
+        person1.setFullName("Руслан");
+        person1.setAge(28);
 
         person1.move();
         person1.talk();

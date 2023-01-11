@@ -2,9 +2,9 @@ package by.itacademy.hw5.task2;
 
 public class Phone {
 
-    String number;
-    String model;
-    float weight;
+    private String number;
+    private String model;
+    private float weight;
 
     Phone() {
 
@@ -18,6 +18,19 @@ public class Phone {
         this.model = model;
         this.weight = weight;
     }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     public void receiveCall(String name) {
         System.out.println("Звонит " + name + "\n");
     }

@@ -6,9 +6,9 @@ public class Main {
 
         Phone phone1 = new Phone();
 
-        phone1.number = "+375(33)321-12-21";
-        phone1.model = "Nokia 3310";
-        phone1.weight = 133.0F;
+        phone1.setNumber("+375(33)321-12-21");
+        phone1.setModel("Nokia 3310");
+        phone1.setWeight(133.0F);
 
         System.out.println("phone1");
         phone1.receiveCall("Руслан");

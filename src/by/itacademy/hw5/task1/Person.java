@@ -2,8 +2,8 @@ package by.itacademy.hw5.task1;
 
 public class Person {
 
-    String fullName;
-    int age;
+    private String fullName;
+    private int age;
 
     Person () {
 
@@ -13,6 +13,15 @@ public class Person {
         this.fullName = fullName;
         this.age = age;
     }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     void move () {
         System.out.println(this.fullName + " говорит");
     }

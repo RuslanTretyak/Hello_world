@@ -5,9 +5,9 @@ import java.util.Random;
 public class Matrix {
 
 
-    int i;
-    int j;
-    int [][] array;
+    private int i;
+    private int j;
+    private int [][] array;
 
     Matrix (int i, int j){
         this.i = i;
