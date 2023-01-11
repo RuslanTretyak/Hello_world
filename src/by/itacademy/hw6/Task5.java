@@ -13,20 +13,21 @@ public class Task5 {
         System.out.println(replaceOOP(str));
 
     }
-    public static String replaceOOP (String str) {
+    public static StringBuilder replaceOOP (String str) {
+        StringBuilder strB = new StringBuilder();
         Pattern pt = Pattern.compile("object-oriented programming", Pattern.CASE_INSENSITIVE);
         Matcher mt = pt.matcher(str);
         if (mt.find()) {
             String[] text = str.split("(?<=((O|o)bject-oriented programming)) ", 0);
-            str = text[0];
+            strB.append(text[0]);
             for (int i = 1; i < text.length; i++) {
                 if (i % 2 != 0) {
                     mt.reset(text[i]);
                     text[i] = mt.replaceFirst("OOP");
                 }
-                str += " " + text[i];
+                strB.append(" ").append(text[i]);
             }
         }
-        return str;
+        return strB;
     }
 }

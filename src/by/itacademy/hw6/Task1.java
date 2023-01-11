@@ -10,9 +10,7 @@ public class Task1 {
         System.out.println("введите ненормированную строку");
         String s = sc.nextLine();
         s = s.trim();
-        while (s.contains("  ")) {
-            s = s.replace("  ", " ");
-        }
+        s = s.replaceAll("\\s+", " ");
         System.out.println(s);
     }
 

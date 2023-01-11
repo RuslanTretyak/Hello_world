@@ -33,15 +33,8 @@ public class Task3 {
     }
     private static String prepareText (String text) {
         text = text.trim();
-        while (text.contains(",")) {
-            text = text.replace(",", " ");
-        }
-        while (text.contains(".")) {
-            text = text.replace(".", " ");
-        }
-        while (text.contains("  ")) {
-            text = text.replace("  ", " ");
-        }
+        text = text.replaceAll("[, .]", " ");
+        text = text.replaceAll("\\s+", " ");
         return text;
     }
     private static void printText (String[] words) {

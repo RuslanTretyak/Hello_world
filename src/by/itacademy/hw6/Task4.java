@@ -19,15 +19,9 @@ public class Task4 {
         System.out.println(str);
     }
     public static void replaceSymb (StringBuilder str) {
-        int i = str.indexOf("=");
-        if (i != -1) {
-            boolean isreplace = true;
-            while (isreplace) {
-                isreplace = false;
-                str.replace(i, i + 1, "равно");
-                i = str.indexOf("=", i);
-                if (i != -1) isreplace = true;
-            }
+        while (str.indexOf("=") != -1) {
+            int i = str.indexOf("=");
+            str.replace(i, i + 1, "равно");
         }
     }
 }
