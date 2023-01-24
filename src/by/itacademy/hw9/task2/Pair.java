@@ -1,7 +1,5 @@
 package by.itacademy.hw9.task2;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Pair<T, V> {
 
