@@ -22,14 +22,4 @@ public abstract class Pet {
     public BigDecimal getPrice() {
         return price;
     }
-
-    @Override
-    public String toString() {
-        return "Pet{" + "breed: '" + breed + '\'' +
-                ", color: '" + color + '\'' +
-                ", age: " + age +
-                ", gender: '" + gender + '\'' +
-                ", price: " + price +
-                '}';
-    }
 }
