@@ -58,28 +58,15 @@ public class Shop {
         }
     }
     public void sortByPriceToHigh() {
-        Map<String, Pet> buffer = new TreeMap<>(this.pets);
+        sortByPriceToLow();
+        Map<String, Pet> buffer = new LinkedHashMap<>(this.pets);
         this.pets.clear();
-        List<String> keys = new ArrayList<>(buffer.keySet());
-        Comparator<Pet> petComparatorPrice = new Comparator<>() {
-            @Override
-            public int compare(Pet o1, Pet o2) {
-                return o1.getPrice().compareTo(o2.getPrice());
-            }
-        };
-        BigDecimal maxPrice = Collections.max(buffer.values(), petComparatorPrice).getPrice();
-        BigDecimal minPrice = maxPrice;
-        int bufKeyInd = 0;
-        while (!keys.isEmpty()) {
-            for (int i = 0; i < keys.size(); i++) {
-                if (buffer.get(keys.get(i)).getPrice().compareTo(minPrice) <= 0) {
-                    minPrice = buffer.get(keys.get(i)).getPrice();
-                    bufKeyInd = i;
-                }
-            }
-            this.pets.put(keys.get(bufKeyInd), buffer.get(keys.get(bufKeyInd)));
-            keys.remove(bufKeyInd);
-            minPrice = maxPrice;
+        List<String> names = new ArrayList<>();
+        for (Map.Entry<String, Pet> pet : buffer.entrySet()){
+            names.add(pet.getKey());
+        }
+        for (int i = names.size() - 1; i >= 0; i--) {
+            this.pets.put(names.get(i), buffer.get(names.get(i)));
         }
     }
     public Map<String, Pet> findByPriceRange(BigDecimal minPrice, BigDecimal maxPrice) {
@@ -93,7 +80,7 @@ public class Shop {
     }
     public void buyPet(String name) {
         if (this.pets.containsKey(name)) {
-            System.out.println("питомец " + name + this.pets.get(name) + " куплен!");
+            System.out.println("питомец " + name + " - " + this.pets.get(name) + " куплен!");
             this.pets.remove(name);
         }
     }
