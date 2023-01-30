@@ -7,9 +7,9 @@ public class Apricot extends Fruit{
     public static final String FRUITNAME = "Apricot";
 
     Random rd = new Random();
-    public Apricot() {
+    public Apricot(int weight) {
         super.priceOfKg = 7.8;
-        super.weightInGrams = rd.nextInt(400) + 100;
+        super.weightInGrams = weight;
         super.fruitName = "Apricot";
     }
 }

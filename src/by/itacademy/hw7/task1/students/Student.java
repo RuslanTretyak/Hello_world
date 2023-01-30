@@ -1,4 +1,4 @@
-package by.itacademy.hw7.task1.studentsAndGraduateStudents;
+package by.itacademy.hw7.task1.students;
 
 public class Student {
 

@@ -10,12 +10,12 @@ public class Main {
     public static void main(String[] args) {
 
         Fruit[] basket = new Fruit[6];
-        basket[0] = new Apple();
-        basket[1] = new Apple();
-        basket[2] = new Pear();
-        basket[3] = new Pear();
-        basket[4] = new Apricot();
-        basket[5] = new Apricot();
+        basket[0] = new Apple(200);
+        basket[1] = new Apple(150);
+        basket[2] = new Pear(130);
+        basket[3] = new Pear(140);
+        basket[4] = new Apricot(100);
+        basket[5] = new Apricot(110);
         calcFullPrice(basket);
         System.out.println("стоимость яблок " + calcFruitPrice("Apple", basket));
         System.out.println("стоимость груш " + calcFruitPrice("Pear", basket));

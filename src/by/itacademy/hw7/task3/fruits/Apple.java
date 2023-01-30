@@ -5,10 +5,10 @@ import java.util.Random;
 public class Apple extends Fruit{
 
 
-    Random rd = new Random();
-    public Apple() {
+
+    public Apple(int weight) {
         super.priceOfKg = 5.5;
-        super.weightInGrams = rd.nextInt(400) + 100;
+        super.weightInGrams = weight;
         super.fruitName = "Apple";
     }
 }

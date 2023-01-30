@@ -9,13 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Flower rose1 = new Rose();
-        Flower rose2 = new Rose();
-        Flower chamomile1 = new Chamomile();
-        Flower chamomile2 = new Chamomile();
-        Flower tulip1 = new Tulip();
-        Flower tulip2 = new Tulip();
-        Flower tulip3 = new Tulip();
+        Flower rose1 = new Rose("red", 1.5, 4);
+        Flower rose2 = new Rose("red", 1.5, 4);
+        Flower chamomile1 = new Chamomile("white", 0.5, 5);
+        Flower chamomile2 = new Chamomile("white", 0.5, 5);
+        Flower tulip1 = new Tulip("yellow", 1.1, 3);
+        Flower tulip2 = new Tulip("yellow", 1.1, 3);
+        Flower tulip3 = new Tulip("yellow", 1.1, 3);
 
         Flower[] bouquet = new Flower[] {rose1, rose2, chamomile1, chamomile2, tulip1, tulip2, tulip3};
 

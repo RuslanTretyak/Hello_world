@@ -1,7 +1,7 @@
 package by.itacademy.hw7.task1;
 
-import by.itacademy.hw7.task1.studentsAndGraduateStudents.GraduateStudent;
-import by.itacademy.hw7.task1.studentsAndGraduateStudents.Student;
+import by.itacademy.hw7.task1.students.GraduateStudent;
+import by.itacademy.hw7.task1.students.Student;
 
 public class University {
 
