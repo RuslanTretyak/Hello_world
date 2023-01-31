@@ -1,16 +1,14 @@
 package by.itacademy.hw8.task3.goods;
 
-import java.math.BigDecimal;
-
 public abstract class Product {
 
     protected String color;
-    protected double Price;
+    protected double price;
     protected boolean availability;
 
     public Product(String color, double price, boolean availability) {
         this.color = color;
-        this.Price = price;
+        this.price = price;
         this.availability = availability;
     }
 
@@ -20,7 +18,7 @@ public abstract class Product {
     }
 
     public double getPrice() {
-        return Price;
+        return price;
     }
 
     public boolean isAvailability() {

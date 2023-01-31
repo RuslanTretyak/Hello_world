@@ -17,6 +17,6 @@ public class Shoes extends Product {
     }
     @Override
     public String toString() {
-        return "\"" + ShoesName + ", цвет='" + color + '\'' + ", размер ='" + size + '\'' + ", цена=" + Price + "\"";
+        return "\"" + ShoesName + ", цвет='" + color + '\'' + ", размер ='" + size + '\'' + ", цена=" + price + "\"";
     }
 }

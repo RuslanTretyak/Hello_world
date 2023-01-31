@@ -12,7 +12,7 @@ public class Clothes extends Product {
     }
     @Override
     public String toString() {
-        return "\"" + clothesName + ", цвет='" + color + '\'' + ", размер ='" + size + '\'' + ", цена=" + Price + "\"";
+        return "\"" + clothesName + ", цвет='" + color + '\'' + ", размер ='" + size + '\'' + ", цена=" + price + "\"";
     }
 
     public ClothesSize getSize() {
