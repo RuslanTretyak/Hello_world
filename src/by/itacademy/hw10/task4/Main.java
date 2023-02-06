@@ -9,7 +9,6 @@ public class Main {
         Shop shop = new Shop();
         System.out.println(shop);
 
-
         System.out.println("сортировка по кличке:\n" + shop.sortPetsByName() + "\n");
 
         shop.sortByPriceToLow();
