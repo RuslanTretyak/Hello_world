@@ -7,7 +7,7 @@ public class UserRepository {
     private static UserRepository userRepository;
     private Map<String, String> users = new HashMap<>();
 
-    public UserRepository() {}
+    private UserRepository() {}
     public static Map<String, String> getRepository(){
         if(userRepository == null) userRepository = new UserRepository();
         return userRepository.users;

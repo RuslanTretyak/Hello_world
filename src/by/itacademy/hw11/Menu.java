@@ -17,7 +17,12 @@ public class Menu {
                 case (1):
                     menuPoint = 0;
                     while (menuPoint != 2){
-                        if (Servis.createUser()) {
+                        System.out.println("Введите логин");
+                        String name = sc.next();
+                        System.out.println("Введите пароль");
+                        String password = sc.next();
+                        if (Servis.createUser(name, password)) {
+                            System.out.println("пользователь с логином \"" + name + "\" создан");
                             menuPoint = 2;
                         } else {
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
@@ -28,7 +33,12 @@ public class Menu {
                 case (2):
                     menuPoint = 0;
                     while (menuPoint != 2){
-                        if (Servis.authorizeUser()) {
+                        System.out.println("Введите логин");
+                        String name = sc.next();
+                        System.out.println("Введите пароль");
+                        String password = sc.next();
+                        if (Servis.authorizeUser(name, password)) {
+                            System.out.println("пользолатель " + name + " авторизован");
                             menuPoint = 2;
                         } else {
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
