@@ -5,24 +5,24 @@ import java.util.List;
 
 public class MyStack<T extends Comparable> {
 
-    private List<T> MyStack = new ArrayList<>();
+    private List<T> myStack = new ArrayList<>();
 
     public void push(T newElement){
-        MyStack.add(newElement);
+        myStack.add(newElement);
     }
     public T pop(){
-        T lastElement = MyStack.get(MyStack.size() - 1);
-        MyStack.remove(MyStack.size()-1);
+        T lastElement = myStack.get(myStack.size() - 1);
+        myStack.remove(myStack.size()-1);
         return lastElement;
     }
 
     @Override
     public String toString() {
-        return "MyStack{" + MyStack + '}';
+        return "myStack{" + myStack + '}';
     }
     public T max(){
-        T maxElement = MyStack.get(0);
-        for (T element: MyStack){
+        T maxElement = myStack.get(0);
+        for (T element: myStack){
             if (element.compareTo(maxElement) >= 1) maxElement = element;
         }
         return maxElement;

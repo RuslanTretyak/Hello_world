@@ -34,10 +34,9 @@ public class Shop {
         return temp.toString();
     }
 
-    public void sortPetsByName() {
-        Map<String, Pet> buffer = new TreeMap<>(this.pets);
-        this.pets.clear();
-        this.pets.putAll(buffer);
+    public Map<String, Pet> sortPetsByName() {
+        return new TreeMap<>(this.pets);
+
     }
     public void sortByPriceToLow() {
         Map<String, Pet> buffer = new TreeMap<>(this.pets);
