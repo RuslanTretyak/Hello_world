@@ -22,24 +22,13 @@ public class Menu {
                         String name = sc.next();
                         System.out.println("Введите пароль");
                         String password = sc.next();
-                        if (!name.matches("\\b[a-z_\\d]{5,20}\\b")) {
-                            try {
-                                throw new WrongLoginException("недопустимый логин");
-                            } catch (WrongLoginException e) {
-                                System.out.println(e.getMessage());
+                        try {
+                            if (Servis.createUser(name, password)) {
+                                System.out.println("пользователь с логином \"" + name + "\" создан");
+                                menuPoint = 2;
                             }
-                        }
-                        if (!password.matches("\\b[a-z_\\d]{8,}\\b")) {
-                            try {
-                                throw new WrongPasswordException("недопустимый пароль");
-                            } catch (WrongPasswordException e) {
-                                System.out.println(e.getMessage());
-                            }
-                        }
-                        if (Servis.createUser(name, password)) {
-                            System.out.println("пользователь с логином \"" + name + "\" создан");
-                            menuPoint = 2;
-                        } else {
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
                             menuPoint = sc.nextInt();
                         }
@@ -52,25 +41,13 @@ public class Menu {
                         String name = sc.next();
                         System.out.println("Введите пароль");
                         String password = sc.next();
-                        if(!UserRepository.getRepository().containsKey(name)) {
-                            try {
-                                throw new UserNotExistException("пользователь с логином \"" + name + "\" не существует");
-                            } catch (UserNotExistException e) {
-                                System.out.println(e.getMessage());
+                        try {
+                            if (Servis.authorizeUser(name, password)) {
+                                System.out.println("пользолатель " + name + " авторизован");
+                                menuPoint = 2;
                             }
-                        } else {
-                            if (!UserRepository.getRepository().get(name).equals(password)) {
-                                try {
-                                    throw new WrongPasswordException("неверный пароль");
-                                } catch (WrongPasswordException e) {
-                                    System.out.println(e.getMessage());
-                                }
-                            }
-                        }
-                        if (Servis.authorizeUser(name, password)) {
-                            System.out.println("пользолатель " + name + " авторизован");
-                            menuPoint = 2;
-                        } else {
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
                             menuPoint = sc.nextInt();
                         }
