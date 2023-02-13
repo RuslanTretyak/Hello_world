@@ -2,13 +2,14 @@ package by.itacademy.hw12.task5.menu;
 
 import by.itacademy.hw12.task5.logger.ConsoleLogger;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Menu {
     public static void main(String[] args) {
-        ConsoleLogger consoleLogger = new ConsoleLogger();
+        File file = new File("./src/by/itacademy/hw12/task5/logger/log.txt");
         MenuActions menuActions = new MenuActions();
         Scanner sc = new Scanner(System.in);
         int menuPoint = 0;
