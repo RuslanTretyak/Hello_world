@@ -19,20 +19,20 @@ public class FileLogger implements Logger{
 
     @Override
     public void warn(String message) {
-        try (PrintWriter printWriter = new PrintWriter(file)) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(file, true))) {
             printWriter.println("\n" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) +
                     " INFO - " + message + "\n");
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
     public void error(String message) {
-        try (PrintWriter printWriter = new PrintWriter(file)) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(file, true))) {
             printWriter.println("\n" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) +
                     " INFO - " + message + "\n");
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

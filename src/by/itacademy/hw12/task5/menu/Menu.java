@@ -8,8 +8,9 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File file = new File("./src/by/itacademy/hw12/task5/logger/log.txt");
+        file.createNewFile();
         MenuActions menuActions = new MenuActions();
         Scanner sc = new Scanner(System.in);
         int menuPoint = 0;
