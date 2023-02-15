@@ -19,8 +19,8 @@ public class Person implements Serializable {
         return "{" + surname + " " + name + ", age " + age + "}";
     }
 
-    public String getName() {
-        return name;
+    public String getSurnameAndName() {
+        return surname + name;
     }
 
     public String getSurname() {

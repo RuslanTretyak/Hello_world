@@ -40,16 +40,10 @@ public class Main {
         Comparator<Person> comparatorName = new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                return ((Person)o1).getName().compareTo(((Person)o2).getName());
+                return ((Person)o1).getSurnameAndName().compareTo(((Person)o2).getSurnameAndName());
             }
         };
-        Comparator<Person> comparatorSurname = new Comparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
-                return ((Person)o1).getSurname().compareTo(((Person)o2).getSurname());
-            }
-        };
-        people.sort(comparatorSurname.thenComparing(comparatorName));
+        people.sort(comparatorName);
         System.out.println(people);
     }
 }

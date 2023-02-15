@@ -5,35 +5,28 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class FileLogger implements Logger{
-    File file = new File("./src/by/itacademy/hw12/task5/logger/log.txt");
+    private final File file = new File("./src/by/itacademy/hw12/task5/logger/log.txt");
 
     @Override
     public void info(String message) {
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter(file, true))) {
-            printWriter.println("\n" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) +
-                    " INFO - " + message + "\n");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        writeLogMessage ("INFO", message);
     }
 
     @Override
     public void warn(String message) {
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter(file, true))) {
-            printWriter.println("\n" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) +
-                    " INFO - " + message + "\n");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        writeLogMessage ("WARN", message);
     }
 
     @Override
     public void error(String message) {
+        writeLogMessage ("ERROR", message);
+    }
+    private void writeLogMessage (String level, String message) {
         try (PrintWriter printWriter = new PrintWriter(new FileWriter(file, true))) {
             printWriter.println("\n" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) +
-                    " INFO - " + message + "\n");
+                    " " + level + " - " + message + "\n");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.getStackTrace();
         }
     }
 }

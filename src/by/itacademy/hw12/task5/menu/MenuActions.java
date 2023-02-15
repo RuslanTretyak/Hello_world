@@ -69,6 +69,8 @@ public class MenuActions {
                 System.out.println("по заданному диапазону питомцев не найдено");
             }
         } else {
+            consoleLogger.warn("некорректно задан ценовой диапазон");
+            fileLogger.warn("некорректно задан ценовой диапазон");
             throw new IOException();
         }
     }
@@ -76,7 +78,7 @@ public class MenuActions {
         try {
             petShopService.buyPet(name);
             consoleLogger.info(getClass() + " пользователь покупает питомца " + "'" + name + "'");
-            fileLogger.info(getClass() + " пользователь покупает питомца \" + \"'\" + name + \"'");
+            fileLogger.info(getClass() + " пользователь покупает питомца " + "'" + name + "'");
         } catch (IOException e) {
             consoleLogger.error(getClass() + " питомца " + "'" + name + "' нет в списке");
             fileLogger.error(getClass() + " питомца " + "'" + name + "' нет в списке");
