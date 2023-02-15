@@ -27,7 +27,7 @@ public class Menu {
                                 System.out.println("пользователь с логином \"" + name + "\" создан");
                                 menuPoint = 2;
                             }
-                        } catch (Exception e) {
+                        } catch (WrongLoginException | WrongPasswordException e) {
                             System.out.println(e.getMessage());
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
                             menuPoint = sc.nextInt();
@@ -46,7 +46,7 @@ public class Menu {
                                 System.out.println("пользолатель " + name + " авторизован");
                                 menuPoint = 2;
                             }
-                        } catch (Exception e) {
+                        } catch (UserNotExistException | WrongPasswordException e) {
                             System.out.println(e.getMessage());
                             System.out.println("1 - повтрорить попытку\n2 - выход в главное меню");
                             menuPoint = sc.nextInt();
