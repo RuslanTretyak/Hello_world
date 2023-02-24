@@ -36,7 +36,6 @@ public class Shop {
 
     public Map<String, Pet> sortPetsByName() {
         return new TreeMap<>(this.pets);
-
     }
     public void sortByPriceToLow() {
         Map<String, Pet> buffer = new TreeMap<>(this.pets);
