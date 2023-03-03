@@ -17,8 +17,10 @@ public class BookService {
         return BookService.getBooks().stream().filter(book -> !book.isAvailable()).collect(Collectors.toList());
 
     }
-    public static void addBook(int number) {
-        getNotAvailableBooks().get(number).setAvailable(true);
+    public static void addBook(Book book) {
+        Book bufferBook = getBooks().stream().filter(book1 -> book1.getId() == book.getId()).findFirst().get();
+        bufferBook.setAvailable(true);
+        RequestService.removeRequest(bufferBook);
     }
     public static void putAwayBook(int number) {
         getAvailableBooks().get(number).setAvailable(false);

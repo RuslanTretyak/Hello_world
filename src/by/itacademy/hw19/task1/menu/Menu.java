@@ -3,7 +3,6 @@ package by.itacademy.hw19.task1.menu;
 import by.itacademy.hw19.task1.*;
 import by.itacademy.hw19.task1.entities.Book;
 import by.itacademy.hw19.task1.entities.Order;
-import by.itacademy.hw19.task1.repositories.BookRepository;
 import by.itacademy.hw19.task1.repositories.OrderRepository;
 import by.itacademy.hw19.task1.services.BookService;
 import by.itacademy.hw19.task1.services.OrderService;
@@ -22,7 +21,7 @@ public class Menu {
                     System.out.println("\n1 - все книги\n2 - в наличии\n3 - выход\n");
                     switch (checkMenuPoint(1, 3)) {
                         case (1):
-                            MenuActions.printBooks(BookRepository.getBooks());
+                            MenuActions.printBooks(BookService.getBooks());
                             break;
                         case (2):
                             MenuActions.printBooks(BookService.getAvailableBooks());
@@ -39,7 +38,7 @@ public class Menu {
                                 if (!BookService.getNotAvailableBooks().isEmpty()) {
                                     System.out.println("выберите книгу для добавления");
                                     MenuActions.printBooks(BookService.getNotAvailableBooks());
-                                    BookService.addBook(checkMenuPoint(1, BookService.getNotAvailableBooks().size()) - 1);
+                                    BookService.addBook(BookService.getNotAvailableBooks().get(checkMenuPoint(1, BookService.getNotAvailableBooks().size()) - 1));
                                     System.out.println("\nкнига добавлена");
                                 } else System.out.println("нет книг для добавления");
                                 break;
@@ -92,9 +91,9 @@ public class Menu {
                                 System.out.println("введите номер телефона заказчика");
                                 String phoneNumber = scanner.nextLine();
                                 System.out.println("выберите книгу");
-                                MenuActions.printBooks(BookRepository.getBooks());
-                                OrderService.createOrder(phoneNumber, BookRepository.getBooks().
-                                        get(checkMenuPoint(1, BookRepository.getBooks().size()) - 1));
+                                MenuActions.printBooks(BookService.getBooks());
+                                OrderService.createOrder(phoneNumber, BookService.getBooks().
+                                        get(checkMenuPoint(1, BookService.getBooks().size()) - 1));
                                 break;
                             case (2):
                                 System.out.println("выберите заказ для добавления книги");
@@ -102,9 +101,9 @@ public class Menu {
                                 Order correctOrder = OrderService.getOrders(OrderStatus.NEW).
                                         get(checkMenuPoint(1, OrderService.getOrders(OrderStatus.NEW).size()) - 1);
                                 System.out.println("выберите книгу для добавления в заказ");
-                                MenuActions.printBooks(BookRepository.getBooks());
-                                Book bookForAdd = BookRepository.getBooks().
-                                        get(checkMenuPoint(1, BookRepository.getBooks().size()) - 1);
+                                MenuActions.printBooks(BookService.getBooks());
+                                Book bookForAdd = BookService.getBooks().
+                                        get(checkMenuPoint(1, BookService.getBooks().size()) - 1);
                                 actionDone = OrderService.addBookInOrder(correctOrder, bookForAdd);
                                 if (actionDone) System.out.println("книга добавлена");
                                 else System.out.println("невозможно добавить, книга уже есть в заказе");
@@ -132,6 +131,7 @@ public class Menu {
                     isDone = false;
                     break;
                 case (5):
+                    MenuActions.printRequests();
                     break;
                 case (6):
                     isDone = true;

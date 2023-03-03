@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class OrderService {
     public static void createOrder(String customerPhoneNumber, Book book) {
         OrderRepository.getOrders().add(new Order(book, customerPhoneNumber, OrderRepository.getOrders().size() + 1));
+        RequestService.createRequest(book);
     }
     public static void cancelOrder(Order order) {
         order.setStatus(OrderStatus.CANCELED);
@@ -31,6 +32,7 @@ public class OrderService {
         boolean isCanAdd = order.getBooksInOrder().stream().noneMatch(book1 -> book1.getId() == book.getId());
         if (isCanAdd) {
             order.getBooksInOrder().add(book);
+            RequestService.createRequest(book);
             return true;
         } else return false;
     }
